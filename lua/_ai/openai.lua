@@ -53,7 +53,7 @@ end
 
 local function request (endpoint, body, on_data, on_complete)
     local api_key = M.openai_api_key
-    if api_key == "" then
+    if api_key == nil then
         on_complete("Please, set ai_openai_key in your editor config")
         return
     end
