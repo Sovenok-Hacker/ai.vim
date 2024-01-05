@@ -52,9 +52,9 @@ local function exec (cmd, args, on_stdout_chunk, on_complete)
 end
 
 local function request (endpoint, body, on_data, on_complete)
-    local api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key then
-        on_complete("$OPENAI_API_KEY environment variable must be set")
+    local api_key = M.openai_api_key
+    if api_key == "" then
+        on_complete("Please, set ai_openai_key in your config")
         return
     end
 

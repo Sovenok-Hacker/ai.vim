@@ -12,6 +12,7 @@ local function get_var (name, default_value)
 end
 
 
+M.openai_api_key = get_var("ai_openai_key", "")
 M.indicator_style = get_var("ai_indicator_style", "sign")
 M.indicator_text = get_var("ai_indicator_text", "🤖")
 M.completions_model = get_var("ai_completions_model", "gpt-3.5-turbo-instruct")
